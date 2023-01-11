@@ -46,16 +46,28 @@ $(function () {
     $(function showEvent() {
         for (i = 9; i <= 17; i++) {
             var getHourKey = "hour-" + i;
-            console.log(getHourKey)
             var getHourKeyId = "#" + getHourKey
             var getTextArea = $(getHourKeyId).children("textarea")
             var showScore = JSON.parse(localStorage.getItem(getHourKey));
-            console.log(showScore)
             getTextArea.text(showScore);
         }
     });
 
     // TODO: Add code to display the current date in the header of the page.
 
-    $("#currentDay").text(timeNow.format("dddd, MMMM D"))
+
+    $("#currentDay").text((timeNow.format("dddd, MMMM D")) + nth)
+    var day = timeNow.format("D")
+    console.log(day)
+    var nth = $(function (day) {
+        if (day === 1 || day === 21 || day === 31) {
+            return "st"
+        } else if (day === 2 || day === 22) {
+            return "nd"
+        } else if (day === 3 || day === 23) {
+            return "rd"
+        } else {
+            return "th"
+        }
+    })
 });
