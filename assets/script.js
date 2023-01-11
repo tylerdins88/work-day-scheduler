@@ -12,7 +12,7 @@ $(function () {
 
     // Code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. 
-    for (i = 9; i <= 17; i++) {
+    for (i = 9; i <= 18; i++) {
         var hourEl = "#hour-" + i;
         var hourNow = timeNow.format("H")
         if (hourNow < i) {
@@ -30,7 +30,7 @@ $(function () {
     // Code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. 
     $(function showEvent() {
-        for (i = 9; i <= 17; i++) {
+        for (i = 9; i <= 18; i++) {
             var getHourKey = "hour-" + i;
             var getHourKeyId = "#" + getHourKey
             var getTextArea = $(getHourKeyId).children("textarea")
