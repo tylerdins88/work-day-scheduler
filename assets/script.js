@@ -13,14 +13,10 @@ $(function () {
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
 
-
-    // I need to button to clear the text area // load in local storage?
-    $("button").click(function (event) {
-        console.log("Hello");
+    $("button").click(function () {
         var divHourId = $(this).parent().attr("id")
         var divTextArea = $(this).siblings("textarea").val()
         localStorage.setItem(divHourId, JSON.stringify(divTextArea));
-        $(this).siblings("textarea").innerHTML = "";
     })
 
     // TODO: Add code to apply the past, present, or future class to each time
@@ -46,7 +42,20 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-    //
+
+    $(function showEvent() {
+        for (i = 9; i <= 17; i++) {
+            var getHourKey = "hour-" + i;
+            console.log(getHourKey)
+            var getHourKeyId = "#" + getHourKey
+            var getTextArea = $(getHourKeyId).children("textarea")
+            var showScore = JSON.parse(localStorage.getItem(getHourKey));
+            console.log(showScore)
+            getTextArea.text(showScore);
+        }
+    });
+
     // TODO: Add code to display the current date in the header of the page.
+
     $("#currentDay").text(timeNow.format("dddd, MMMM D"))
 });
