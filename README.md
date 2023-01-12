@@ -14,7 +14,10 @@ This is a simple to you use webpage. Click on the link below to be taken to the 
 
 https://tylerdins88.github.io/work-day-scheduler/
 
-Shown below is how I built each for row to operate by individually. I set variables my for classes and iD's. I used moment JS to keep track of my times. Pending on what time of day it is, the color box of your plans will change. Lastly you can see how I saved it to Local Storage.
+The following is a screenshot that shows how I get the color of each hour to change. This changes to show wether the time is in the past, the present time, or is a future time period. 
+I create a for loop that will check each time blocks ID against the current hour. If it the current hour is greater than the ID then the time is in the past. If the current hour equals the ID, you are in the present time block. Lastly, if the current hour is less than the ID, then that is a future time period. I get the current hour using day.js.
+
+![Screenshot](./assets/images/code-apply-class.png)
 
 ## Credits
 

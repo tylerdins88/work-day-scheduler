@@ -40,6 +40,6 @@ $(function () {
     });
 
     // Code to display the current date in the header of the page.
-    $("#currentDay").text(timeNow.format("dddd, MMMM Do"))
+    $("#currentDay").text(timeNow.format("dddd, MMMM D, YYYY"))
 
 });
